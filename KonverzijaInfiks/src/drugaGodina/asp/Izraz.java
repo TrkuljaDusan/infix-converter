@@ -15,7 +15,8 @@ class Izraz {
 		
 		
 	}
-	void postfix() throws StackFull, StackEmpty{
+	// infix to postfix conversion algorithm
+	void postfix() throws StackFull, StackEmpty{	
 		Stack s= new Stack (100);
 		int rank = 0;
 		char x;
