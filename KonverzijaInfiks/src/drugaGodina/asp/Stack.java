@@ -1,6 +1,5 @@
 package drugaGodina.asp;
 import drugaGodina.asp.StackFull;
-//import drugaGodina.asp.StackEmpty;
 
 class Stack {
 	
@@ -9,7 +8,7 @@ class Stack {
 	int top;
 	
 	Stack (int size){
-		top = 0; // empty stack
+		top = 0; 		// empty stack
 		this.size=size;
 		b = new char[size];
 	}
@@ -21,9 +20,8 @@ class Stack {
 			b[top]=x; top++; 
 		}
 	}
-	char pop () /*throws StackEmpty*/ {
+	char pop (){
 		if (this.empty()) {
-			//throw new StackEmpty(this);
 			return '\0';	
 		}
 		else {

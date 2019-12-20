@@ -26,12 +26,7 @@ class MainFrame extends JFrame {
 	
 	private JButton btn1 = new JButton("Convert");
 	
-	private JButton btn2 = new JButton("Next step");
-	
-	private JLabel lab = new JLabel("Stack");
-	
 	private JPanel btns = new JPanel(new FlowLayout());
-	
 	private JPanel texts= new JPanel(new GridLayout(1,3));
 	
 	public MainFrame () {
@@ -53,23 +48,7 @@ class MainFrame extends JFrame {
 		texts.add(Text4);
 		
 		add(texts, BorderLayout.CENTER);
-//		btn2.addActionListener(new ActionListener() {
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				String line= Text.getText().split("\\n")[0];
-//				try {
-//					Expression i= new Expression(line);
-//					i.next(Text1, Text2);
-//				} catch (InvalidExpressionException e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
-//				
-//			}
-//			
-//		});
-//		
+
 		btn1.addActionListener(new ActionListener() {
 
 			@Override
@@ -83,13 +62,12 @@ class MainFrame extends JFrame {
 							Text4.setText("Rank\n");
 							Expression i = new Expression (line);
 							i.postfix();
-							//Text.setText("\n\n"+i.postfix());
+							
 							for(int j=0; j<i.steps;j++){
 								Text2.append(i.expressionSteps[j]+"\n");
 								Text3.append(i.stackSteps[j]+"\n");
 								Text4.append(i.rSteps[j]+"\n");
-								Text1.append(i.symbolStep[j]+"\n");
-								
+								Text1.append(i.symbolStep[j]+"\n");	
 							}
 
 							}

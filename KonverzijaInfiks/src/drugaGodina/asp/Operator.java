@@ -23,7 +23,6 @@ class Operator {
 		case '/' : return 3;
 		case '^' : return 4;
 		case '(' : return 0;
-		//case ')' : return 1;
 		default: return 100;
 		}
 		
