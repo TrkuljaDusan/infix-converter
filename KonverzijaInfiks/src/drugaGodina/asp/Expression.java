@@ -1,4 +1,5 @@
 package drugaGodina.asp;
+import java.lang.StringBuffer;
 
 class Expression {
 
@@ -30,7 +31,19 @@ class Expression {
 		st.steps++;
 	}
 	
+	
+	public static Step prefix (String infix) throws InvalidExpressionException{
+
+		
+		infix=infix.replace('(','~');
+		infix=infix.replace(')','(');
+		infix=infix.replace('~',')');
+		Step st= postfix(new StringBuffer(infix).reverse().toString());
+		return st;
+		//TODO st contents printed in reverse for prefix
+	}
 	//infix to postfix conversion algorithm
+	
 	public static Step postfix(String infix) throws /*StackFull,*/ InvalidExpressionException{	
 		
 		int n=infix.length();
