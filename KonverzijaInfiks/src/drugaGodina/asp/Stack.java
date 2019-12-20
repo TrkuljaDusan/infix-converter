@@ -5,29 +5,30 @@ import drugaGodina.asp.StackEmpty;
 class Stack {
 	
 	char[] b;
-	
+	int size;
 	int top;
 	
 	Stack (int size){
 		top = 0; // empty stack
+		this.size=size;
 		b = new char[size];
 	}
 	
-	void push(char x) throws StackFull {
+	void push(char x) /*throws StackFull*/ {
 		if (this.full()) 
-			throw new StackFull(this);
+			;//throw new StackFull(this);
 		else {
 			b[top]=x; top++; 
 		}
 	}
-	char pop () throws StackEmpty {
-		if (this.empty()) {
-			throw new StackEmpty(this);
-		}
-		else {
+	char pop () /*throws /*StackEmpty*/ {
+		//if (this.empty()) {
+			//throw new StackEmpty(this);
+		//}
+		//else {
 			top--;
 			return b[top];
-		}
+		//}
 	}
 	
 	char top() {
@@ -38,7 +39,7 @@ class Stack {
 	}
 	
 	boolean full () {
-		if (top==100) return true;
+		if (top==size) return true;
 		else return false;
 	}
 	boolean empty () {
@@ -46,5 +47,8 @@ class Stack {
 		else return false;
 	}
 	
+	public String print() {
+		return String.copyValueOf(b).substring(0,top); 
+	}
 	
 }
