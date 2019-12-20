@@ -60,14 +60,14 @@ class MainFrame extends JFrame {
 							Text3.setText("Stack\n");
 							Text1.setText("Current\n");
 							Text4.setText("Rank\n");
-							Expression i = new Expression (line);
-							i.postfix();
+							//Expression i = new Expression (line);
+							Step st=Expression.postfix(line);
 							
-							for(int j=0; j<i.steps;j++){
-								Text2.append(i.expressionSteps[j]+"\n");
-								Text3.append(i.stackSteps[j]+"\n");
-								Text4.append(i.rSteps[j]+"\n");
-								Text1.append(i.symbolStep[j]+"\n");	
+							for(int j=0; j<st.steps;j++){
+								Text2.append(st.expressionSteps[j]+"\n");
+								Text3.append(st.stackSteps[j]+"\n");
+								Text4.append(st.rSteps[j]+"\n");
+								Text1.append(st.symbolStep[j]+"\n");	
 							}
 
 							}

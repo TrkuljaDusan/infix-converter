@@ -1,8 +1,8 @@
 package drugaGodina.asp;
 
 class InvalidExpressionException extends Exception {
-	Expression exp;
-	InvalidExpressionException (Expression e){
+	Step exp;
+	InvalidExpressionException (Step e){
 		super("Invalid expression");
 		exp=e;
 	}
