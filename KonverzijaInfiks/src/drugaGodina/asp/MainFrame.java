@@ -97,8 +97,8 @@ class MainFrame extends JFrame {
 								for(int j=0; j<g.exp.steps;j++){
 									Text2.append(g.exp.expressionSteps[j]+"\n");
 									Text3.append(g.exp.stackSteps[j]+"\n");
-									Text1.append(g.exp.rSteps[j]+"\n");
-									Text4.append(g.exp.symbolStep[j]+"\n");}
+									Text4.append(g.exp.rSteps[j]+"\n");
+									Text1.append(g.exp.symbolStep[j]+"\n");}
 								
 								Text1.append(g.getMessage());
 							}
