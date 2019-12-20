@@ -8,6 +8,7 @@ class Operator {
 		case '-' : return 2;
 		case '*' : return 3;
 		case '/' : return 3;
+		case '%' : return 3;
 		case '^' : return 5;
 		case '(' : return 6;
 		case ')' : return 1;
@@ -21,6 +22,7 @@ class Operator {
 		case '-' : return 2;
 		case '*' : return 3;
 		case '/' : return 3;
+		case '%' : return 3;
 		case '^' : return 4;
 		case '(' : return 0;
 		default: return 100;
@@ -33,7 +35,8 @@ class Operator {
 		case '-' : return -1;
 		case '*' : return -1;
 		case '/' : return -1;
-		case '^' : return -1;
+		case '%' : return -1;
+		case '^' : return -1;		
 		default : return 100;
 		}
 	}
