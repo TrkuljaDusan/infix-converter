@@ -39,12 +39,14 @@ class Expression {
 		char x;
 		steps=0;
 		String postfix="";
+		char next='\0';
 		
 		for  (int i=0; i<n;i++)
 		{
-			char next = infix.charAt(0);
-			infix = infix.substring(1, infix.length());
 			updateStep(rank, s, postfix, next);
+			
+			next = infix.charAt(0);
+			infix = infix.substring(1, infix.length());
 			
 			if(Character.isLetter(next)) {
 				postfix = postfix + next;
@@ -58,11 +60,11 @@ class Expression {
 						rank+= Operator.rank(x);
 						
 						updateStep(rank, s, postfix, next);
-					
+						//TODO same operator printed multiple times
 					if (rank<1)
 						throw new InvalidExpressionException(this);
 				}
-			if (next!=')')
+			if (next!=')') 
 				s.push(next);
 			else
 				x=s.pop();
@@ -72,7 +74,7 @@ class Expression {
 			x=s.pop();
 			postfix+=x;
 			rank+= Operator.rank(x);
-			
+			//TODO A+B* error isn't caught until the end AB*+
 			updateStep(rank, s, postfix,' ');
 		}
 	
